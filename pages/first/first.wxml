@@ -1,0 +1,40 @@
+<!--pages/first.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="新闻咨询">
+  <view class="cu-list menu-avatar padding-top-xs">
+    <view class="cu-item" wx:for="{{news_data}}" wx:for-item="i">
+      <view class="content">
+        <view>
+          <text class="text-cut">{{i.ATitle}}</text>
+        </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">{{i.AContent}}</text>
+        </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">{{i.AArthur}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  </van-tab>
+  <van-tab title="口腔小知识">
+    <view class="cu-list menu-avatar padding-top-xs">
+    <view class="cu-item" wx:for="{{knowledge_data}}" wx:for-item="i">
+      <view class="content">
+        <view>
+          <text class="text-cut">{{i.ATitle}}</text>
+        </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">{{i.AContent}}</text>
+        </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">{{i.AArthur}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  </van-tab>
+  <van-tab title="科普小视频">内容 3</van-tab>
+  <van-tab title="口腔小史">内容 4</van-tab>
+</van-tabs>

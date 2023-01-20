@@ -1,0 +1,8 @@
+<!--logs.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="治疗医师">
+   <view>
+   </view>
+  </van-tab>
+  <van-tab title="口腔聊天室"></van-tab>
+</van-tabs>

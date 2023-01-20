@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<!--<van-circle value="{{ 30 }}" text="text" />-->
+
+<view class="search">
+  <view class="searchCon">
+    <icon class="search-icon" type="search" />
+    <input type="text" placeholder="请输入你要搜索的医生姓名" bindinput="getSearchVal" bindconfirm="searchFun" />
+  </view>
+</view>
+<view style="height: 20rpx"></view>
+<swiper class="screen-swiper" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key="*this">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="widthFix"></image>
+    </view>
+  </swiper-item>
+</swiper>
+<view class="reserve">
+  进入预约
+</view>
+<view class="cu-list menu-avatar padding-top-xs">
+  <view class="cu-item" wx:for="{{herolist}}" we:key="Id">
+    <view class="cu-avatar radius lg" style="background-image:url({{item.Img}});background-size: 130%;"></view>
+    <view class="content">
+      <view>
+        <text class="text-cut">{{item.Name}}</text>
+      </view>
+      <view class="text-gray text-sm flex">
+        <text class="text-cut">{{item.Position}}</text>
+      </view>
+      <view class="text-gray text-sm flex">
+        <text class="text-cut">{{item.Introduce}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="punch">
+  <van-cell title="打卡" is-link bind:click="showPopup" />
+
+  <van-popup show="{{ pshow }}" bind:close="onClose">内容</van-popup>
+  <van-cell title="选择单个日期" value="{{ date }}" bind:click="onDisplay" />
+  <van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" />
+</view>
+<view class="solids-bottom padding-xs flex align-center">
+  <view class="flex-sub text-center">
+    <view class="padding">到底了~~~</view>
+  </view>
+</view>
